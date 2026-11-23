@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --color-paper: #faf7f2;
+  --color-ink: #1c2533;
+  --color-muted: #5b6474;
+  --color-line: #e7e1d6;
+
+  --color-brand-50: #eef6f2;
+  --color-brand-100: #d5ebe0;
+  --color-brand-200: #acd6c2;
+  --color-brand-500: #2f7d5b;
+  --color-brand-600: #24664a;
+  --color-brand-700: #1d523c;
+  --color-brand-800: #173f2f;
+  --color-brand-900: #102d22;
+
+  --color-accent-100: #fdefd5;
+  --color-accent-400: #f2a93b;
+  --color-accent-500: #e08e17;
+  --color-accent-600: #b86f0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Visible keyboard focus for all interactive elements */
+:focus-visible {
+  outline: 3px solid var(--color-accent-400);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@layer components {
+  /* Components live in the "components" layer, so normal utilities (w-full, p-0...) override them. */
+  .btn,
+  .btn-primary,
+  .btn-accent,
+  .btn-outline,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply bg-brand-600 text-white shadow-sm hover:bg-brand-700;
+  }
+  .btn-accent {
+    @apply bg-accent-500 text-white shadow-sm hover:bg-accent-600;
+  }
+  .btn-outline {
+    @apply border border-line bg-white text-ink hover:border-brand-500 hover:text-brand-700;
+  }
+  .btn-ghost {
+    @apply text-muted hover:bg-brand-50 hover:text-brand-700;
+  }
+  .btn-sm {
+    @apply px-3.5 py-1.5 text-xs;
+  }
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-sm;
+  }
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink shadow-xs outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 aria-[invalid=true]:border-red-400 aria-[invalid=true]:ring-red-100;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "booknest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BookNest - CS353 Scenario C e-commerce bookstore (educational demo)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:db": "node scripts/test-database.mjs",
+    "seed:sql": "node scripts/generate-seed-sql.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.2",
+    "next": "16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^22",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "^4.3.5",
+    "typescript": "~5.9.3",
+    "vitest": "^5.1.1"
+  }
+}
